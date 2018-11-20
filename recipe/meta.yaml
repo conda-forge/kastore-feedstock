@@ -1,6 +1,6 @@
 {% set name = "kastore" %}
-{% set version = "0.1.0" %}
-{% set sha256 = "f74e9b8f41f4ad0680fb1e669ef2a8e92d18f3066853e7542518e98eeb022626" %}
+{% set version = "0.2.0" %}
+{% set sha256 = "34fe7e12763b00297fe306225102bd54033148908934e740ee19ee96f516bfff" %}
 
 package:
   name: {{ name|lower }}
