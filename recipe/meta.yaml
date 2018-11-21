@@ -1,6 +1,6 @@
 {% set name = "kastore" %}
-{% set version = "0.1.0" %}
-{% set sha256 = "f74e9b8f41f4ad0680fb1e669ef2a8e92d18f3066853e7542518e98eeb022626" %}
+{% set version = "0.2.0" %}
+{% set sha256 = "34fe7e12763b00297fe306225102bd54033148908934e740ee19ee96f516bfff" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 0  
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - kastore=kastore.__main__:main
@@ -45,9 +45,7 @@ about:
   home: http://github.com/kastore/kastore
   license: MIT
   license_family: MIT
-  # FIXME Not including this for now because it's not in the tarball. Fix 
-  # for version 0.2.0 https://github.com/tskit-dev/kastore/issues/43
-  # license_file: LICENSE
+  license_file: LICENSE
   summary: Write-once-read-many key-array store
   description: Simple key-value store for arrays of numerical data.
   doc_url: 'http://kastore.readthedocs.io/en/stable'
