@@ -1,6 +1,6 @@
 {% set name = "kastore" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "34fe7e12763b00297fe306225102bd54033148908934e740ee19ee96f516bfff" %}
+{% set version = "0.2.2" %}
+{% set sha256 = "48d19734eba2dd07490b147d73fce392bbe4415448dffac01a2a0dbf7c6754ee" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0  
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - kastore=kastore.__main__:main
