@@ -12,7 +12,7 @@ source:
 
 build:
   number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - kastore=kastore.__main__:main
   # We need C99 and the Windows compilers before py35 won't work.
