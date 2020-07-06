@@ -1,6 +1,6 @@
 {% set name = "kastore" %}
-{% set version = "0.2.2" %}
-{% set sha256 = "48d19734eba2dd07490b147d73fce392bbe4415448dffac01a2a0dbf7c6754ee" %}
+{% set version = "0.3.1" %}
+{% set sha256 = "6f538170b393ce4cecec0ff1c7f6de75f5c991d452357867b009905ca508cca4" %}
 
 package:
   name: {{ name|lower }}
@@ -11,12 +11,12 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - kastore=kastore.__main__:main
   # We need C99 and the Windows compilers before py35 won't work.
-  skip: True  # [win and py<35]
+  skip: true  # [win and py<35]
 
 # Following the guidance here for building against numpy:
 # https://conda-forge.org/docs/meta.html#building-against-numpy
@@ -29,6 +29,7 @@ requirements:
     - pip
     - numpy
   run:
+    - setuptools
     - python
     - {{ pin_compatible('numpy') }}
     - six
@@ -48,8 +49,8 @@ about:
   license_file: LICENSE
   summary: Write-once-read-many key-array store
   description: Simple key-value store for arrays of numerical data.
-  doc_url: 'http://kastore.readthedocs.io/en/stable'
-  dev_url: 'https://github.com/tskit-dev/kastore'
+  doc_url: http://kastore.readthedocs.io/en/stable
+  dev_url: https://github.com/tskit-dev/kastore
 
 extra:
   recipe-maintainers:
