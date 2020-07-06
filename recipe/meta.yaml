@@ -29,6 +29,7 @@ requirements:
     - pip
     - numpy
   run:
+    - setuptools
     - python
     - {{ pin_compatible('numpy') }}
     - six
