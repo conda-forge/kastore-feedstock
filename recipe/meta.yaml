@@ -1,6 +1,5 @@
 {% set name = "kastore" %}
 {% set version = "0.3.1" %}
-{% set sha256 = "6f538170b393ce4cecec0ff1c7f6de75f5c991d452357867b009905ca508cca4" %}
 
 package:
   name: {{ name|lower }}
@@ -8,15 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 6f538170b393ce4cecec0ff1c7f6de75f5c991d452357867b009905ca508cca4
 
 build:
   number: 3
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - kastore=kastore.__main__:main
-  # We need C99 and the Windows compilers before py35 won't work.
-  skip: true  # [win and py<35]
 
 # Following the guidance here for building against numpy:
 # https://conda-forge.org/docs/meta.html#building-against-numpy
@@ -32,6 +29,7 @@ requirements:
     - setuptools
     - python
     - {{ pin_compatible('numpy') }}
+    - importlib_metadata
     - six
     - humanize
 
