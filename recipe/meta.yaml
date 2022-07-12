@@ -1,5 +1,5 @@
 {% set name = "kastore" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6f538170b393ce4cecec0ff1c7f6de75f5c991d452357867b009905ca508cca4
+  sha256: e62c506aa553895573e169f67ee9d4c1889182a3627a50108760352c3f8df85e
 
 build:
-  number: 4
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - kastore=kastore.__main__:main
