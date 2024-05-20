@@ -10,7 +10,7 @@ source:
   sha256: e62c506aa553895573e169f67ee9d4c1889182a3627a50108760352c3f8df85e
 
 build:
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - kastore=kastore.__main__:main
@@ -20,6 +20,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - setuptools
     - python
@@ -28,7 +29,6 @@ requirements:
   run:
     - setuptools
     - python
-    - {{ pin_compatible('numpy') }}
     - importlib_metadata
     - six
     - humanize
