@@ -11,12 +11,11 @@ source:
 
 build:
   number: 0
+  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - kastore=kastore.__main__:main
 
-# Following the guidance here for building against numpy:
-# https://conda-forge.org/docs/meta.html#building-against-numpy
 requirements:
   build:
     - {{ compiler('c') }}
@@ -30,7 +29,6 @@ requirements:
     - setuptools
     - python
     - importlib_metadata
-    - six
     - humanize
 
 test:
