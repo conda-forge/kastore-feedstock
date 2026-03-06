@@ -1,5 +1,5 @@
 {% set name = "kastore" %}
-{% set version = "0.3.3" %}
+{% set version = "0.3.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5927edb734c98ac467208b50d3542f526fec248d439356fed7c50fdce9f541d6
+  sha256: 00d90fe3e3dded1dfa0845fbf1245bc2c14d28bd6004db16a621f02a18f81787
 
 build:
-  number: 5
-  skip: true  # [py<39]
+  number: 0
+  skip: true  # [py<311]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - kastore=kastore.__main__:main
@@ -52,10 +52,11 @@ about:
   license_file: LICENSE
   summary: Write-once-read-many key-array store
   description: Simple key-value store for arrays of numerical data.
-  doc_url: http://kastore.readthedocs.io/en/stable
+  doc_url: http://tskit.dev/kastore/docs
   dev_url: https://github.com/tskit-dev/kastore
 
 extra:
   recipe-maintainers:
     - jeromekelleher
     - benjeffery
+    - petrelharp
