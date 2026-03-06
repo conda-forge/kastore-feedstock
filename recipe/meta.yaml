@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<39]
+  skip: true  # [py<311]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - kastore=kastore.__main__:main
@@ -52,10 +52,11 @@ about:
   license_file: LICENSE
   summary: Write-once-read-many key-array store
   description: Simple key-value store for arrays of numerical data.
-  doc_url: http://kastore.readthedocs.io/en/stable
+  doc_url: http://tskit.dev/kastore/docs
   dev_url: https://github.com/tskit-dev/kastore
 
 extra:
   recipe-maintainers:
     - jeromekelleher
     - benjeffery
+    - petrelharp
