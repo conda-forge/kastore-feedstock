@@ -1,13 +1,13 @@
 {% set name = "kastore" %}
-{% set version = "0.3.5" %}
+{% set version = "0.3.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 00d90fe3e3dded1dfa0845fbf1245bc2c14d28bd6004db16a621f02a18f81787
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: d0cc3956d9b5211bc965241788de2524e935d7f2ef12ae7acaf8d99f2f4e09cc
 
 build:
   number: 0
