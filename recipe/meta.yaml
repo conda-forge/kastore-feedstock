@@ -35,7 +35,7 @@ requirements:
   run:
     - setuptools
     - python
-    - importlib_metadata
+    - importlib-metadata
     - humanize
 
 test:
